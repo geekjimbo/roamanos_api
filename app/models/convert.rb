@@ -1,2 +1,0 @@
-class Convert < ApplicationRecord
-end

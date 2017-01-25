@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :convert
+
+  #get 'states/:country_id/index', :controller=> 'state', :action=>'index' 
+  #get 'cities/:country_id/:state_id/index', :controller=> 'city', :action=>'index'
+  #get ':id/data_package/', :controller=> 'data_package', :action=>'show'
 end
