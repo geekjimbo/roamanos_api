@@ -3,15 +3,22 @@ require './lib/romanos'
 class ConvertController < ApplicationController
 
   def index
-    render json: {}
+   msg = call_convertidor params[:arabigo_in]
+   render json: msg
   end
 
   def show
-    render json: {}
+   msg = call_convertidor params[:id].to_i
+   render json: msg
   end
 
   private
 
+  def call_convertidor(arabigo_in)
+   msg = {:return =>"nada que convertir", :code => 404, :result => ""}
+   _return = convert arabigo_in
+   msg = {:return =>"conversión exitosa!", :code => 200, :result => _return} if !_return.nil?
+  end
 end
 
 
